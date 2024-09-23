@@ -700,8 +700,6 @@ GEM
       rack-rdf (~> 3.3)
     rack-protection (2.2.4)
       rack
-    rack-proxy (0.7.7)
-      rack
     rack-rdf (3.3.0)
       rack (>= 2.2, < 4)
       rdf (~> 3.3)
@@ -866,7 +864,6 @@ GEM
       tilt
     scanf (1.0.0)
     select2-rails (3.5.11)
-    semantic_range (3.0.0)
     shacl (0.4.1)
       json-ld (~> 3.3)
       rdf (~> 3.3)
@@ -980,11 +977,6 @@ GEM
       method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    webpacker (5.4.4)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -1034,7 +1026,6 @@ DEPENDENCIES
   turbolinks (~> 5)
   twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
   tzinfo-data
-  webpacker (~> 5.0)
 
 RUBY VERSION
    ruby 3.2.2p53
