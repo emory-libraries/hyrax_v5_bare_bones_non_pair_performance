@@ -56,3 +56,12 @@ namespace :deploy do
     end
   end
 end
+
+# Restart apache
+namespace :deploy do
+  after :log_revision, :restart_apache do
+    on roles(:ubuntu) do
+      execute :sudo, :systemctl, :restart, :httpd
+    end
+  end
+end
