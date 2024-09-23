@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'devise'
+gem 'devise-guests', '~> 0.8'
 gem 'dotenv-rails'
 gem 'hyrax', git: 'https://github.com/samvera/hyrax', ref: '9c58751'
 gem 'pg', '~> 1.3'

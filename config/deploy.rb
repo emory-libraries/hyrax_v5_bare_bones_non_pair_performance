@@ -1,6 +1,10 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.18.1"
 
+# Load environment variables
+require 'dotenv'
+Dotenv.load('.env.production')
+
 set :application, "hyrax_v5_bare_bones_non_pair_performance"
 set :repo_url, "https://github.com/emory-libraries/hyrax_v5_bare_bones_non_pair_performance"
 set :deploy_to, '/opt/dlp-selfdeposit'
