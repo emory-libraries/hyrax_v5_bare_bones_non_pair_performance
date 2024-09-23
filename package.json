@@ -17,6 +17,7 @@
     "uv-config": "cp ./config/uv/uv.html ./public/uv/uv.html & cp ./config/uv/uv-config.json ./public/uv/"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "*",
     "webpack-dev-server": "^3"
   }
 }
