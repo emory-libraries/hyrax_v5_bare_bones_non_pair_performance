@@ -27,6 +27,15 @@ set :default_env,
 # Default value for local_user is ENV['USER']
 set :local_user, -> { `git config user.name`.chomp }
 
+# Restart apache
+namespace :deploy do
+  after :log_revision, :restart_apache do
+    on roles(:ubuntu) do
+      execute :sudo, :systemctl, :restart, :httpd
+    end
+  end
+end
+
 namespace :sidekiq do
   task :restart do
     invoke 'sidekiq:stop'
@@ -57,11 +66,4 @@ namespace :deploy do
   end
 end
 
-# Restart apache
-namespace :deploy do
-  after :log_revision, :restart_apache do
-    on roles(:ubuntu) do
-      execute :sudo, :systemctl, :restart, :httpd
-    end
-  end
-end
+
