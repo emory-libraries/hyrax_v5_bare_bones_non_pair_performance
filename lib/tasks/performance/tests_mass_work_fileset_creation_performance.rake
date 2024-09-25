@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-namespace :sirenia do
+namespace :performance do
   task "tests_mass_work_fileset_creation_performance", [:number_of_works] => :environment do |_cmd, args|
     require 'mass_work_generation_performance_test'
     number_of_works = args[:number_of_works]&.to_i
