@@ -37,7 +37,10 @@ class MassWorkGenerationPerformanceTest
       ).call(@work_change_set).value_or {}
       @file.unlink
       apply_open_visibility(resource: persisted_work)
-      report_current_time if i.multiple_of?(100)
+      if i.multiple_of?(100)
+        report_current_time
+        sleep 0.5
+      end
     end
   end
 
