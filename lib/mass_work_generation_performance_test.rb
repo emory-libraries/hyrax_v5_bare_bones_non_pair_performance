@@ -35,7 +35,7 @@ class MassWorkGenerationPerformanceTest
         'work_resource.save_acl' => { permissions_params: {} }
       ).call(@work_change_set)
       @file.unlink
-      if i.multiple_of?(100)
+      if i.multiple_of?(20)
         report_current_time
         sleep 0.5
       end
@@ -76,10 +76,10 @@ class MassWorkGenerationPerformanceTest
   def report_performance
     puts "Adding works to collection started at #{@date_times_array.first}."
     puts "Adding works to collection ended at #{@date_times_array.last}."
-    puts "Fastest time (in seconds) that it took to process 100 works: #{@seconds_array.min}."
-    puts "Longest time (in seconds) that it took to process 100 works: #{@seconds_array.max}."
-    puts "Average time (in seconds) that it took to process 100 works: #{@seconds_array.sum.to_f/@seconds_array.size.to_f}."
-    File.write(Rails.root.join('tmp', 'times_per_100.txt'), @date_times_array.to_s)
-    File.write(Rails.root.join('tmp', 'seconds_per_100.txt'), @seconds_array.to_s)
+    puts "Fastest time (in seconds) that it took to process 20 works: #{@seconds_array.min}."
+    puts "Longest time (in seconds) that it took to process 20 works: #{@seconds_array.max}."
+    puts "Average time (in seconds) that it took to process 20 works: #{@seconds_array.sum.to_f/@seconds_array.size.to_f}."
+    File.write(Rails.root.join('tmp', 'times_per_20.txt'), @date_times_array.to_s)
+    File.write(Rails.root.join('tmp', 'seconds_per_20.txt'), @seconds_array.to_s)
   end
 end
