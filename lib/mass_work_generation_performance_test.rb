@@ -35,10 +35,7 @@ class MassWorkGenerationPerformanceTest
         'work_resource.save_acl' => { permissions_params: {} }
       ).call(@work_change_set)
       @file.unlink
-      if i.multiple_of?(20)
-        report_current_time
-        sleep 0.5
-      end
+      report_current_time if i.multiple_of?(20)
     end
   end
 
